@@ -1,0 +1,78 @@
+#naruto{
+  background-image: url('https://m.media-amazon.com/images/S/pv-target-images/0b79246ff36af93a015dc8087115f079adae3f4431c9fcb959d688379a414733.jpg');
+}
+#solo{
+  background-image: url('https://miro.medium.com/v2/resize:fit:1358/1*yVY0TDD746ZdPq0x4hbHJg.jpeg');
+}
+#demon{
+  background-image: url('https://m.economictimes.com/thumb/msid-103914319,width-1600,height-900,resizemode-4,imgsize-74464/demon-slayer-season-5-heres-everything-we-about-the-series-so-far.jpg');
+}
+#one{
+  background-image: url('https://www.denofgeek.com/wp-content/uploads/2020/07/One-Piece-Full-Cast-Header-Image.jpg?fit=2560%2C1440');
+}
+#shadow{
+  background-image: url('https://m.media-amazon.com/images/S/pv-target-images/030f9f5328eef955c97039436eb98e4d65f24315b735982751007596b4209222._SX1080_FMjpg_.jpg');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: all 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
