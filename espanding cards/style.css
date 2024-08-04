@@ -35,17 +35,17 @@ body {
 }
 
 .panel {
-  background-size: cover;
+  background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
   border-radius: 50px;
-  color: #fff;
-  cursor: pointer;
+  color: #ffffff;
+  cursor:pointer;
   flex: 0.5;
   margin: 10px;
   position: relative;
-  transition: all 700ms ease-in;
+  transition: all 500ms ease-in;
 }
 
 .panel h3 {
@@ -68,11 +68,33 @@ body {
 
 @media (max-width: 480px) {
   .container {
-    width: 100vw;
+    width: 200vw;
+    display: flex;
+    margin: 0;
+
+  }
+  body {
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    transform: rotate(90deg);
+  }
+  .panel {
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    border-radius: 60px;
+    color: #ffffff;
+    cursor:pointer;
+    flex: 0.5;
+    margin: 5px;
+    position: relative;
+    transition: all 500ms ease-in;
   }
 
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
-  }
 }
