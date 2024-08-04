@@ -8,7 +8,7 @@
   background-image: url('https://m.economictimes.com/thumb/msid-103914319,width-1600,height-900,resizemode-4,imgsize-74464/demon-slayer-season-5-heres-everything-we-about-the-series-so-far.jpg');
 }
 #one{
-  background-image: url('https://www.denofgeek.com/wp-content/uploads/2020/07/One-Piece-Full-Cast-Header-Image.jpg?fit=2560%2C1440');
+  background-image: url('https://www.denofgeek.com/wp-content/uploads/2020/07/One-Piece-Full-Cast-Header-Image.jpg?fit=2560%2C1440')
 }
 #shadow{
   background-image: url('https://m.media-amazon.com/images/S/pv-target-images/030f9f5328eef955c97039436eb98e4d65f24315b735982751007596b4209222._SX1080_FMjpg_.jpg');
@@ -35,17 +35,17 @@ body {
 }
 
 .panel {
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
   border-radius: 50px;
-  color: #ffffff;
-  cursor:pointer;
+  color: #fff;
+  cursor: pointer;
   flex: 0.5;
   margin: 10px;
   position: relative;
-  transition: all 500ms ease-in;
+  -webkit-transition: all 700ms ease-in;
 }
 
 .panel h3 {
@@ -68,33 +68,11 @@ body {
 
 @media (max-width: 480px) {
   .container {
-    width: 200vw;
-    display: flex;
-    margin: 0;
-
-  }
-  body {
-    font-family: 'Muli', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-    transform: rotate(90deg);
-  }
-  .panel {
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 60vh;
-    border-radius: 60px;
-    color: #ffffff;
-    cursor:pointer;
-    flex: 0.5;
-    margin: 5px;
-    position: relative;
-    transition: all 500ms ease-in;
+    width: 100vw;
   }
 
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
 }
