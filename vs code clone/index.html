@@ -1,0 +1,161 @@
+<html>
+<head>
+    <title>Visual Studio Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="head">
+        <div id="top">
+            <a href="http://127.0.0.1:5500/index.html" style="text-decoration: none;"><img src="https://code.visualstudio.com/favicon.ico" width="24" style="padding-right:05px;">
+            <span style="color:white; font-size:20;padding-right:10px;" id="vs">Visual Studio Code</span></a>
+            <a href="https://code.visualstudio.com/docs" style="text-decoration: none;" target="_blank"><span class="toplinks">Docs</span></a>
+            <a href="https://code.visualstudio.com/updates" style="text-decoration: none;" target="_blank"><span class="toplinks">Updates</span></a>
+            <a href="https://code.visualstudio.com/Blogs" style="text-decoration: none;" target="_blank"><span class="toplinks">Blogs</span></a>
+            <a href="https://code.visualstudio.com/API" style="text-decoration: none;" target="_blank"><span class="toplinks">API</span></a>
+            <a href="https://code.visualstudio.com/Extensions" style="text-decoration: none;" target="_blank"><span class="toplinks">Extensions</span></a>
+            <a href="https://code.visualstudio.com/FAQ" style="text-decoration: none;" target="_blank"><span class="toplinks">FAQ</span></a>
+            <a href="https://code.visualstudio.com/Learn" style="text-decoration: none;" target="_blank"><span class="toplinks">Learn</span></a>
+            
+
+        </div>
+        <div>
+        <img class="light" id="button" onclick="toggleButton()" src="https://code.visualstudio.com/assets/icons/theme-light.svg">
+
+            <input type="text" class="search" img="https://code.visualstudio.com/assets/icons/search-dark.svg"
+                placeholder="Search Docs" style="height:35px; padding-left:10px;">
+            <a href="https://code.visualstudio.com/docs/?dv=win64user"><button class="download"style="height: 40px;">Download</button></a>
+        </div>
+    </div>
+    <br>
+
+    <div class="block1">
+        <div style="color: #9ba3b4;text-align: center;">
+            <a href="https://code.visualstudio.com/updates">Version 1.92</a> is now available! Read about the new
+            features and fixes from July.
+            <br><br><br>
+        </div>
+
+        <div class="two">
+            <div class="left">
+                <div class="code">
+                    <div class="free">Free.Build on open source. Runs everywhere.</div>
+                    <h2 style="color: white; margin-top:10px; margin-bottom:20px; ">Coding Editing. <br>Redefined.</h2>
+                    <a href="https://code.visualstudio.com/docs/?dv=win64user"><button class="download">Download For
+                            Windows</button></a>
+                    <p class="links">
+                        <a href="https://vscode.dev/"> web</a>,
+                        <a href="https://code.visualstudio.com/insiders">insiders edition</a>,or
+                        <a href="https://code.visualstudio.com/Download" style="color:#3b7bb5;">other plateforms</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="img">
+                <img class="images" src="https://code.visualstudio.com/assets/home/home-screenshot-mac-2x-v2.png"alt="">
+            </div>
+        </div><hr>
+    </div>
+       
+
+    <!--<div class="block2">
+            <div class="two">
+                <div class="left">
+                    <div class="code">
+                        <h2 style="color: white; margin-top:10px; margin-bottom:20px; font-size:30px ">Code in any
+                            language <br> </h2>
+                        <p style="color: white; font-size:20px;">VS Code supports almost every major <br>programming
+                            language. Several ship in the box,<br> like JavaScript, TypeScript, CSS, and HTML, but
+                            <br>extensions for others can be found in the VS Code
+                            <br> Marketplace.
+                        </p>
+
+
+                    </div>
+                </div>
+
+                <div class="img">
+                    <div class="onee" style="height: 100px; width:500px;" >
+                        <div style="height: 10px; width:150px">
+                        <img src="https://code.visualstudio.com/assets/home/language-js.png" alt="">
+                        <code>Javascript</code>
+                        </div>  
+                        <div style="height: 10px; width:150px">
+                        <img src="https://code.visualstudio.com/assets/home/language-ts.png" alt="">
+                        <code>TypeScript</code>
+                        </div>
+                        <div style="height: 10px; width:150px">
+                        <img src="https://code.visualstudio.com/assets/home/language-python.png" alt="">
+                        <code>Python</code></div>
+                    </div>
+                    <div class="onee" style="height: 100px; width:500px;">
+                        <img src="https://code.visualstudio.com/assets/home/language-cs.png" alt="">
+                        <code>c#</code>
+                        <img src="https://code.visualstudio.com/assets/home/language-cpp.png" alt="">
+                        <code>C++</code>
+                        <img src="https://code.visualstudio.com/assets/home/language-html.png" alt="">
+                        <code>HTML</code>
+                    </div>
+                    <div class="onee">
+                        <img src="https://code.visualstudio.com/assets/home/language-java.png" alt="">
+                        <code>Java</code>
+                        <img src="https://code.visualstudio.com/assets/home/language-json.png" alt="">
+                        <code>Json</code>
+                        <img src="https://code.visualstudio.com/assets/home/language-php.png" alt="">
+                        <code>PHP</code>
+                    </div>
+                    <div class="onee">
+                        <img src="https://code.visualstudio.com/assets/home/language-markdown.png" alt="">
+                        <code>Markdown</code>
+                        <img src="https://code.visualstudio.com/assets/home/language-powershell.png" alt="">
+                        <code>Powershell</code>
+                        <img src="https://code.visualstudio.com/assets/home/language-yaml.png" alt="">
+                        <code>YAML</code> 
+                    </div>
+                </div>
+            </div> 
+        </div>    -->
+
+</body>
+<script>
+    function lighton()
+    {
+        document.body.style.background="white";
+        var toplinks = document.getElementsByClassName('toplinks');
+        for (var i = 0; i < toplinks.length; i++) {
+          toplinks[i].style.color = "black";
+        }
+        var toplinks = document.getElementsByClassName('toplinks');
+        document.querySelector('.img img').src = "whiteimg.png";
+        document.getElementById('vs').style.color="black";
+        document.querySelector('.code h2').style.color = "black";
+    }
+    function lightoff()
+    {
+        document.body.style.background="black";
+        var toplinks = document.getElementsByClassName('toplinks');
+        for (var i = 0; i < toplinks.length; i++) {
+            toplinks[i].style.color = "white";
+          }
+          document.querySelector('.img img').src = "https://code.visualstudio.com/assets/home/home-screenshot-mac-2x-v2.png";
+          document.getElementById('vs').style.color="white";
+          document.querySelector('.code h2').style.color = "white";
+         
+    }
+
+let isLight = false;
+
+function toggleButton() {
+  if (isLight) {
+    lightoff();
+    document.getElementById('button').src = "https://code.visualstudio.com/assets/icons/theme-light.svg";
+  } else {
+    lighton();
+    document.getElementById('button').src = "https://code.visualstudio.com/assets/icons/theme-dark.svg";
+  }
+  isLight = !isLight;
+}
+    
+</script>
+
+</html>

@@ -1,0 +1,105 @@
+body{
+    margin: 0px;
+    padding:0px;
+    background-color:#0e0e0e;
+}
+.toplinks{
+    color:#9ba3b4;
+    padding:10px;
+    cursor: pointer;
+    
+}
+#head{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    object-fit: contain;
+}
+button{
+    padding: 0px;
+    border-color:#2894e2;
+    background-color:#2894e2;
+}
+.block1 :first-child{
+    font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+.two
+{
+    display: flex;
+    justify-content: space-between;
+}
+.img{
+   size-adjust: 10px;
+   padding-right: 100px;
+   color: white;
+}
+.darklight{
+    /* color:white; */
+
+}
+.images{
+    width: 100%;
+}
+.code
+{
+    font-size: 30px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    padding-left: 100px;
+    padding-right: 50px;
+    white-space: nowrap;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+.download{
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+
+}
+.search{
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    border-width:0.5px;
+   
+}
+.free
+{
+    font-size: 24px;
+    color: white;
+    border: 1px solid rgb(43, 43, 43);
+    border-radius:20px;
+    padding-left: 10px;
+    padding-right: 2px;
+    font-size: small;
+    background-color:rgb(24, 24, 24);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 270px;
+}
+.links{
+    padding-left: 2px;
+    font-size: small;
+    color: white;
+
+}
+.left{
+    padding-top: 100px;
+    padding-right: 50px;
+}
+
+.block1{
+    padding-bottom: px;;
+}
+.onee{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+}
+#button{
+    cursor: pointer;
+}
