@@ -3,63 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    span{
-        padding: 2px;
-    
-        padding-left: 15px;
-        padding-right: 10px;
-        font-size: 18px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        background-color: black;
-        color: white;
-    }
-    .nav{
-    
-        width: 412px;
-        background-color: black;
-        border-radius: 2px;
-    }
-    .container{
-        height: 741px;
-        width: 412px;
-        border: 10px solid black;
-        border-radius: 10px;
-        background-color: black;
-        margin-left: 650px;
-        margin-top: 50px;
-        border-color: rgba(88, 103, 126, 0.338);
-    }
-    .display{
-        width: 390px;
-        height: 130px;
-        background-color: black;
-        color: white;
-        padding-top: 70px;
-        padding-right: 20px;
-        text-align: right;
-        font-size: 30px;
-    }
-    button{
-        height: 100px;
-        width: 100px;
-        background-color: rgb(143, 231, 255);
-        color: white;
-        border: none;
-        background:none;
-        font-size: 25px;
-    }
-    .buttons{
-        background-color: rgb(35, 34, 34);
-        border-radius: 10px;
-    }
-    .blue{
-        color: rgb(146, 213, 255);
-      
-    }
-</style>
 <body>
     <div class="container">
 
@@ -71,12 +17,8 @@
         </div>
 
         <div class="display">
-            <div id="input">
-                
-            </div>
-            <div id="output">
-                
-            </div>
+            <div id="input"></div>
+            <div id="output"></div>
         </div>
 
         <div class="buttons">
@@ -113,39 +55,5 @@
         </div>
     </div>
 </body>
-<script>
-    var x='';
-    
-    /* this function just takes the values from button and pastes it into id input */
-    function num(v){
-        x+=v;
-        document.getElementById("input").innerHTML=x; 
-    }
-
-    /*below two functions are used to clear the values of input and output id's*/
-    function clear()
-    {
-        x="";
-       document.getElementById("input").innerHTML="";
-       f="";
-       document.getElementById("output").innerHTML="";
-    }
-    function reset()
-    {
-        clear();
-    }
-
-    /* below function is takes values of id input and evaluates it and pastes it into id output */
-    function cal(){
-        let f=eval(x);
-        document.getElementById("output").innerHTML=f;
-    }
-
-    /* below function is used to remove last one letter from the id input*/
-    function back(){
-        const p=document.getElementById("input");
-        p.innerHTML = p.innerHTML.slice(0, -1);
-    }
-
-</script>
+<script src="calculator.js"></script>
 </html>
