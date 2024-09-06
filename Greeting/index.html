@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greeting Message genrator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		.container {
+			width: 50%;
+			margin: 40px auto;
+			background-color: #fff;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+		}
+
+		
+		.form-group {
+			margin-bottom: 20px;
+            padding-right: 5%;
+		}
+		
+		.form-group label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		
+		.form-group input[type="text"] {
+			width: 100%;
+			height: 40px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		
+		.form-group textarea {
+			width: 100%;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			resize: vertical;
+		}
+		
+		.form-group input[type="submit"] {
+			width: 100%;
+			height: 40px;
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		.form-group input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+        #submit {
+            width: 50%; /* or any other width you prefer */
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto; /* add this line */
+            display: block; /* add this line */
+        }
+        form{
+            align-items: center;
+        }
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2 style="text-align: center;">Greetings generator</h2>
+		<form>
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name">
+			</div>
+			<div class="form-group">
+				<label for="college">College Name:</label>
+				<input type="text" id="college" name="college">
+			</div>
+			<div class="form-group">
+				<label for="greeting">Greeting Message:</label>
+				<textarea id="greeting" name="greeting" rows="5"></textarea>
+			</div>
+			<div class="form-group">
+				<input type="button" onclick="greet()" id="submit" value="Generate">
+			</div>
+            <h3>Note: If you don't know or remember what to input in the textbox, you can leave it blank.</h3>
+		</form>
+	</div>
+    <div class="container">
+		<div class="message">
+       
+        </div>
+	</div>
+
+</body>
+
+        <script>
+            function greet() {
+				const name = document.getElementById("name").value;
+				const college = document.getElementById("college").value;
+				const greetingMessage = document.getElementById("greeting").value;
+			
+				let message = "";
+			
+				if (name && college && greetingMessage) {
+					message = `Hello, my name is ${name} from ${college}. ${greetingMessage}`;
+				} else if (name && college) {
+					message = `Hello, my name is ${name} from ${college}.`;
+				} else if (name && greetingMessage) {
+					message = `Hello, my name is ${name}. ${greetingMessage}`;
+				} else if (college && greetingMessage) {
+					message = `Hello, I am from ${college}. ${greetingMessage}`;
+				} else if (name) {
+					message = `Hello, my name is ${name}.`;
+				} else if (college) {
+					message = `Hello, I am from ${college}.`;
+				} else if (greetingMessage) {
+					message = greetingMessage;
+				} else {
+					const randomGreetings = [
+						"Good morning! everyone",
+						"Hello, world!",
+						"Hi, it's nice to meet you!",
+						"Greetings, everyone!",
+						"Hello, folks!",
+						"Hi, how are you today?",
+						"Good day, everyone!",
+						"Hello, friends!",
+						"Hi, it's great to be here!",
+						"Greetings, all!"
+					];
+					message = randomGreetings[Math.floor(Math.random() * randomGreetings.length)];
+				}
+			
+				document.querySelector(".message").innerHTML = message;
+			}
+        </script>
+
+
+</html>
