@@ -6,4 +6,4 @@
  
 [Calculator](https://web-dev-4fxd.vercel.app/)
 
-[Calculator](https://web-dev-7eim.vercel.app/)
+[Greeting generator](https://web-dev-7eim.vercel.app/)
