@@ -15,7 +15,7 @@ span{
     border-radius: 2px;
 }
 .container{
-    height: 741px;
+    height: 100%;
     width: 412px;
     border: 10px solid black;
     border-radius: 10px;
@@ -23,6 +23,7 @@ span{
     margin-left: 650px;
     margin-top: 50px;
     border-color: rgba(88, 103, 126, 0.338);
+
 }
 .display{
     width: 390px;
