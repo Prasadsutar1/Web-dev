@@ -8,8 +8,17 @@ const cors = require("cors");
 
 mongoose.connect("mongodb+srv://123prasadsutar:prasad@cluster0.tny46.mongodb.net/");
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin : [''],
+        methods : ["POST","GET"],
+        credentials : true
+    }
+));
 app.use(express.json());
+app.post("/",(req,res)=> {
+    res.json("Hello");
+})
 app.post("/signup", async function(req, res) {
     
     const email = req.body.email;
