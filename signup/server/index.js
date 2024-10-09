@@ -4,34 +4,14 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const JWT_SECRET = "s3cret";
 const bcrypt = require("bcrypt");
+const cors = require("cors");
 
 mongoose.connect("mongodb+srv://123prasadsutar:prasad@cluster0.tny46.mongodb.net/");
 const app = express();
+app.use(cors());
 app.use(express.json());
-
-// Custom CORS handler function
-const allowCors = fn => async (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  );
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-  return await fn(req, res);
-};
-
-// Example usage with a handler
-const handler = (req, res) => {
-  const d = new Date();
-  res.end(d.toString());
-};
-
-app.post("/signup", allowCors(async function(req, res) {
+app.post("/signup", async function(req, res) {
+    
     const email = req.body.email;
     const password = req.body.password;
     console.log(email);
@@ -45,16 +25,74 @@ app.post("/signup", allowCors(async function(req, res) {
             name: name
         });
     } catch (error) {
-        console.log("error");
+        console.log("error")
     }
+    
+    
     res.json({
         message: "You are signed up"
-    });
-}));
-
-// Additional routes can be added similarly
-
-// Start server
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+    })
 });
+
+
+app.post("/signin", async function(req, res) {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const response = await UserModel.findOne({
+        email: email
+    });
+    if (!response) {
+        req.status(403).json({
+            message: "users does not exist in the database"
+        })
+        return
+    }
+    const p = response.password;
+    console.log(p);
+    const checkPass= await bcrypt.compare(password,response.password);
+    console.log(response);
+    if (checkPass) {
+        const token = jwt.sign({
+            id: response._id.toString()
+        },JWT_SECRET, {
+            expiresIn: '1h' // optional, adjust the expiration time as needed
+        });
+
+        res.json({
+            token : token
+        })
+    } else {
+        res.status(403).json({
+            message: "Incorrect creds"
+        })
+    }
+});
+
+
+app.post("/todo", function(req, res) {
+
+});
+
+
+app.get("/todos", function(req, res) {
+
+});
+
+function auth(req,res,next){
+    const token = req.header.token;
+
+    const decodedData = jwt.verify(token,JWT_SECRET);
+
+    if(decodedData){
+        req.userId = decodedData.userId;
+        next();
+    }
+    else{
+        req.status(403).json({
+            message: "Access denied. No token provided"
+        })
+    }
+}
+
+app.listen(3005);
