@@ -10,6 +10,9 @@ mongoose.connect("mongodb+srv://123prasadsutar:prasad@cluster0.tny46.mongodb.net
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 app.post("/signup", async function (req, res) {
 
     const email = req.body.email;
@@ -78,20 +81,5 @@ app.post("/signin", async function (req, res) {
     }
 });
 
-function auth(req, res, next) {
-    const token = req.header.token;
-
-    const decodedData = jwt.verify(token, JWT_SECRET);
-
-    if (decodedData) {
-        req.userId = decodedData.userId;
-        next();
-    }
-    else {
-        req.status(403).json({
-            message: "Access denied. No token provided"
-        })
-    }
-}
-
-app.listen(3005);
+app.listen(3000, () => console.log("Server ready on port 3000."));
+module.exports = app;
